@@ -1,8 +1,24 @@
 # 🔍 Elasticsearch 向量搜尋實作
+---
 
 使用 Elasticsearch 8.x 建立中文向量資料庫系統，支援 embedding 轉換、index 建立、k-NN 向量查詢與 demo 結果輸出。
 
-📖 原始教學移植自 GitBook，詳見 `/docs` 目錄。
+完整步驟：https://tuanjung.gitbook.io/elasticsearch-vector-db/~/changes/4
+
+---
+## 流程：
+> https://www.elastic.co/cn/what-is/vector-database
+<img width="997" alt="截圖 2025-03-07 上午11 30 30副本" src="https://github.com/user-attachments/assets/69a3e1e7-9ad1-41fe-bea6-46365153e01a" />
+
+
+1. **資料準備**  
+   - 擁有一組原始數據（例如文字、圖片）。
+   - 使用嵌入模型將原始數據轉換為向量。（**C**）
+2. **索引建立**  
+   - 將轉換後的向量存入 Elasticsearch 的索引中，為後續搜尋做好準備。
+3. **查詢與搜尋**  
+   - 應用程式發送查詢後，推論 API先將查詢轉換為向量。（**B**）
+   - Elasticsearch 利用 k-NN 搜尋找出最相似的向量（**A**）並回傳結果。
 
 ---
 
